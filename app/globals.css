@@ -14,15 +14,17 @@
   --steel-800: #121925;
   --steel-900: #0b1018;
   --steel-950: #05080d;
-  /* Chili Red — identidade Fênix (#CD1C18) */
-  --blue-50: #fceceb;
-  --blue-200: #f0a09d;
-  --blue-400: #e85a56;
-  --blue-500: #e02420;
-  --blue-600: #cd1c18;
-  --blue-700: #a31613;
-  --blue-800: #7a100e;
-  --blue-900: #4f0a09;
+  /* Verde PhoenixBor — da logo (#689048) */
+  --blue-50: #f3f7eb;
+  --blue-100: #e4efd0;
+  --blue-200: #c5d9a0;
+  --blue-300: #a8c56e;
+  --blue-400: #88a050;
+  --blue-500: #78a048;
+  --blue-600: #689048;
+  --blue-700: #3d7830;
+  --blue-800: #2a5c28;
+  --blue-900: #1a3d1c;
 }
 
 @theme inline {
@@ -40,7 +42,9 @@
   --color-steel-900: var(--steel-900);
   --color-steel-950: var(--steel-950);
   --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
   --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
   --color-blue-400: var(--blue-400);
   --color-blue-500: var(--blue-500);
   --color-blue-600: var(--blue-600);
@@ -108,13 +112,13 @@ body {
 }
 
 .btn-glow {
-  box-shadow: 0 0 0 rgba(205, 28, 24, 0);
+  box-shadow: 0 0 0 rgba(104, 144, 72, 0);
   animation: glowPulse 1.1s ease-in-out infinite;
 }
 
 .btn-glow:hover {
   animation: none;
-  box-shadow: 0 0 32px rgba(205, 28, 24, 0.65);
+  box-shadow: 0 0 32px rgba(104, 144, 72, 0.65);
 }
 
 .float-pulse {
@@ -123,15 +127,15 @@ body {
 
 .circle-run {
   animation: circleRun 1.8s linear infinite;
-  filter: drop-shadow(0 0 4px #cd1c18)
-    drop-shadow(0 0 10px #cd1c18)
-    drop-shadow(0 0 18px rgba(205, 28, 24, 0.9));
+  filter: drop-shadow(0 0 4px #689048)
+    drop-shadow(0 0 10px #689048)
+    drop-shadow(0 0 18px rgba(104, 144, 72, 0.9));
 }
 
 .circle-glow-pulse {
-  filter: drop-shadow(0 0 4px #cd1c18)
-    drop-shadow(0 0 12px #cd1c18)
-    drop-shadow(0 0 22px rgba(205, 28, 24, 0.85));
+  filter: drop-shadow(0 0 4px #689048)
+    drop-shadow(0 0 12px #689048)
+    drop-shadow(0 0 22px rgba(104, 144, 72, 0.85));
   animation: circleGlowPulse 2.4s ease-in-out infinite;
 }
 
@@ -195,10 +199,10 @@ body {
 @keyframes glowPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(205, 28, 24, 0);
+    box-shadow: 0 0 0 rgba(104, 144, 72, 0);
   }
   50% {
-    box-shadow: 0 0 26px rgba(205, 28, 24, 0.55);
+    box-shadow: 0 0 26px rgba(104, 144, 72, 0.55);
   }
 }
 
@@ -217,11 +221,11 @@ body {
 @keyframes floatPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(205, 28, 24, 0.55);
+    box-shadow: 0 0 0 0 rgba(104, 144, 72, 0.55);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 0 12px rgba(205, 28, 24, 0);
+    box-shadow: 0 0 0 12px rgba(104, 144, 72, 0);
     transform: scale(1.06);
   }
 }

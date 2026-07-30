@@ -56,7 +56,7 @@ const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
                 <button
                   key={index}
                   type="button"
-                  className="group/social grid h-[30px] w-[30px] place-content-center rounded-full border-none bg-white shadow-[rgba(0,0,0,0.5)_0px_7px_5px_-5px] transition-all duration-200 ease-in-out group-hover:[transform:translate3d(0,0,50px)] group-hover:[box-shadow:rgba(0,0,0,0.2)_-5px_20px_10px_0px] hover:bg-[#CD1C18] active:bg-[#a31613]"
+                  className="group/social grid h-[30px] w-[30px] place-content-center rounded-full border-none bg-white shadow-[rgba(0,0,0,0.5)_0px_7px_5px_-5px] transition-all duration-200 ease-in-out group-hover:[transform:translate3d(0,0,50px)] group-hover:[box-shadow:rgba(0,0,0,0.2)_-5px_20px_10px_0px] hover:bg-[#689048] active:bg-[#3d7830]"
                   style={{ transitionDelay: delay }}
                 >
                   <Icon className="h-4 w-4 stroke-black transition-colors group-hover/social:stroke-white" />
@@ -93,7 +93,7 @@ const GlassCard = React.forwardRef<HTMLDivElement, GlassCardProps>(
               className="absolute grid aspect-square w-[50px] place-content-center rounded-full bg-white shadow-[rgba(100,100,111,0.2)_-10px_10px_20px_0px] transition-all duration-500 ease-in-out [transform:translate3d(0,0,100px)] [transition-delay:1.6s] group-hover:[transform:translate3d(0,0,120px)]"
               style={{ top: "30px", right: "30px" }}
             >
-              <PhoenixMark className="w-5 text-[#CD1C18]" />
+              <PhoenixMark className="w-5 text-[#689048]" />
             </div>
           </div>
         </div>
@@ -153,7 +153,7 @@ export const StatGlassCard = React.forwardRef<HTMLDivElement, StatGlassCardProps
           <p className="bg-gradient-to-r from-white via-white to-blue-400 bg-clip-text font-[family-name:var(--font-display)] text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
             {value}
           </p>
-          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.28em] text-white/45">
+          <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.28em] text-white/75">
             {label}
           </p>
         </div>
@@ -208,8 +208,8 @@ export const SegmentGlassCard = React.forwardRef<
         <h3 className="bg-gradient-to-r from-white to-blue-300 bg-clip-text text-lg font-semibold uppercase tracking-[0.14em] text-transparent">
           {title}
         </h3>
-        <p className="mt-4 text-sm leading-relaxed text-white/55">{summary}</p>
-        <ul className="mt-6 space-y-2.5 text-sm text-white/50">
+        <p className="mt-4 text-sm leading-relaxed text-white/85">{summary}</p>
+        <ul className="mt-6 space-y-2.5 text-sm text-white/80">
           {challenges.map((c) => (
             <li key={c} className="flex gap-2">
               <span className="text-blue-400" aria-hidden>

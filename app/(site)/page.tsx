@@ -10,6 +10,7 @@ import { Reveal } from "@/components/Reveal";
 import { StarButton } from "@/components/ui/star-button";
 import {
   EliteAboutCarousel,
+  MarketsSection,
   MissionVisionValues,
   StatsSection,
 } from "@/components/HomeSections";
@@ -25,7 +26,7 @@ export default function HomePage() {
         <HeroVideo />
         <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-5xl flex-col items-center justify-center px-4 pb-28 pt-28 text-center sm:px-6">
           <motion.p
-            className="text-[10px] font-medium uppercase tracking-[0.45em] text-white/55 sm:text-xs"
+            className="text-[10px] font-medium uppercase tracking-[0.45em] text-white/85 sm:text-xs"
             initial={{ opacity: 0, y: 12, letterSpacing: "0.7em", filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, letterSpacing: "0.45em", filter: "blur(0px)" }}
             transition={{ duration: 0.28, delay: 0.02 }}
@@ -63,8 +64,8 @@ export default function HomePage() {
             transition={{ duration: 0.28, delay: 0.28 }}
           >
             <StarButton
-              lightColor="#CD1C18"
-              backgroundColor="#0a0a0a"
+              lightColor="#FAFAFA"
+              backgroundColor="#689048"
               lightWidth={140}
               duration={2.4}
               borderWidth={1}
@@ -76,7 +77,7 @@ export default function HomePage() {
           </motion.div>
         </div>
         <div className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-3">
-          <span className="text-[9px] uppercase tracking-[0.4em] text-white/45">
+          <span className="text-[9px] uppercase tracking-[0.4em] text-white/75">
             Scroll
           </span>
           <span className="scroll-line h-10 w-px origin-top bg-white/50" />
@@ -88,6 +89,8 @@ export default function HomePage() {
       <MissionVisionValues />
 
       <StatsSection />
+
+      <MarketsSection />
 
       <section className="overflow-hidden bg-black text-white">
         <div className="grid min-h-[88vh] lg:grid-cols-2">
@@ -114,7 +117,7 @@ export default function HomePage() {
                 </Link>
                 <StarButton
                   lightColor="#FAFAFA"
-                  backgroundColor="#CD1C18"
+                  backgroundColor="#689048"
                   lightWidth={120}
                   duration={2.6}
                   borderWidth={1}
@@ -148,11 +151,11 @@ export default function HomePage() {
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-4xl font-medium tracking-tight sm:text-5xl">
               Fale com a PhoenixBor
             </h2>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/55">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/85">
               Envie a aplicação, dimensões ou amostra. Retornamos com orientação
               e proposta.
             </p>
-            <ul className="mt-8 space-y-3 text-xs uppercase tracking-[0.16em] text-white/45">
+            <ul className="mt-8 space-y-3 text-xs uppercase tracking-[0.16em] text-white/75">
               <li>Peças padrão e sob medida</li>
               <li>Atendimento nacional</li>
               <li>Canal direto via WhatsApp</li>
@@ -164,7 +167,7 @@ export default function HomePage() {
                 className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent"
                 aria-hidden
               />
-              <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/40">
+              <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.28em] text-white/70">
                 Solicitar orçamento
               </p>
               <LeadForm variant="dark" />

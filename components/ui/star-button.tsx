@@ -143,7 +143,7 @@ export function StarCircle({
   size = 88,
   lightWidth = 52,
   duration = 2.4,
-  lightColor = "#CD1C18",
+  lightColor = "#689048",
   backgroundColor = "#0a0a0a",
   borderWidth = 2,
   className,

@@ -63,7 +63,7 @@ export function ProductCard({
 
         <Link
           href={`/produtos/${product.slug}`}
-          className="btn-glow mt-5 block w-full cursor-pointer bg-black py-3.5 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white transition-all duration-200 hover:bg-blue-600 hover:tracking-[0.36em]"
+          className="btn-glow mt-5 block w-full cursor-pointer bg-blue-600 py-3.5 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.36em]"
         >
           {ctaLabel}
         </Link>

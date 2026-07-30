@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site";
 import { products } from "@/content/products";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const productLinks = products.slice(0, 6).map((p) => ({
   href: `/produtos/${p.slug}`,
@@ -57,22 +58,14 @@ export function Footer() {
         aria-hidden
         style={{
           background:
-            "radial-gradient(ellipse 50% 60% at 0% 50%, rgba(205,28,24,0.22), transparent 55%), radial-gradient(ellipse 40% 50% at 100% 80%, rgba(205,28,24,0.18), transparent 50%)",
+            "radial-gradient(ellipse 50% 60% at 0% 50%, rgba(104, 144, 72,0.22), transparent 55%), radial-gradient(ellipse 40% 50% at 100% 80%, rgba(104, 144, 72,0.18), transparent 50%)",
         }}
       />
 
       <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr_0.75fr_1fr] lg:gap-10">
           <div>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-3 font-[family-name:var(--font-display)] text-xl font-semibold uppercase tracking-[0.14em] text-white transition-opacity hover:opacity-80"
-            >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-blue-500 text-sm text-blue-400">
-                PB
-              </span>
-              PhoenixBor
-            </Link>
+            <BrandLogo iconOnly iconSize={64} />
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
               Desde 2002, a PhoenixBor desenvolve e fornece soluções de vedação
               industrial — peças técnicas, compostos de alta performance e
@@ -80,7 +73,7 @@ export function Footer() {
             </p>
             <Link
               href="/contato"
-              className="btn-glow mt-6 inline-flex cursor-pointer rounded-lg bg-blue-600 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_10px_32px_rgba(205,28,24,0.45)] transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.24em]"
+              className="btn-glow mt-6 inline-flex cursor-pointer rounded-lg bg-blue-600 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-[0_10px_32px_rgba(104, 144, 72,0.45)] transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.24em]"
             >
               Solicitar orçamento
             </Link>
@@ -185,7 +178,7 @@ export function Footer() {
                 <span>
                   {siteConfig.address}
                   <br />
-                  <span className="text-white/45">{siteConfig.hours}</span>
+                  <span className="text-white/75">{siteConfig.hours}</span>
                 </span>
               </p>
             </div>
@@ -204,7 +197,7 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-white/40 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-5 text-xs text-white/70 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos
             reservados.

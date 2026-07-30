@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const navLeft = [
   { href: "/", label: "Home" },
@@ -38,7 +39,7 @@ function NavLink({
       href={href}
       onClick={onClick}
       className={`group relative cursor-pointer whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.14em] transition-colors duration-150 ${
-        active ? "text-white" : "text-white/55 hover:text-white"
+        active ? "text-white" : "text-white/85 hover:text-white"
       }`}
     >
       {label}
@@ -72,7 +73,7 @@ export function Header() {
           : "sticky top-0 z-50 border-b border-white/10 bg-steel-950/95 backdrop-blur-md"
       }
     >
-      <div className="relative mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-4 sm:px-6 lg:gap-6">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-4 py-3 sm:px-6 lg:gap-6">
         {/* Esquerda */}
         <nav className="hidden items-center justify-end gap-4 xl:gap-5 lg:flex">
           {navLeft.map((item) => (
@@ -98,13 +99,9 @@ export function Header() {
         </div>
 
         {/* Centro — marca */}
-        <Link
-          href="/"
-          className="justify-self-center font-[family-name:var(--font-display)] text-lg font-semibold tracking-[0.16em] uppercase text-white transition-opacity duration-150 hover:opacity-80 sm:text-xl"
-          onClick={() => setOpen(false)}
-        >
-          PhoenixBor
-        </Link>
+        <div className="justify-self-center">
+          <BrandLogo iconOnly iconSize={88} onClick={() => setOpen(false)} />
+        </div>
 
         {/* Direita */}
         <nav className="hidden items-center justify-start gap-4 xl:gap-5 lg:flex">

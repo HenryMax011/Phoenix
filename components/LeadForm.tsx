@@ -88,14 +88,14 @@ export function LeadForm({
 
   const labelClass = cn(
     "mb-2 block text-[11px] font-semibold uppercase tracking-[0.18em]",
-    dark ? "text-white/55" : "text-steel-600",
+    dark ? "text-white/85" : "text-steel-600",
   );
 
   const fieldClass = cn(
     "w-full border px-4 py-3 text-sm outline-none transition-all duration-200",
     dark
-      ? "border-white/15 bg-black/80 text-white placeholder:text-white/30 focus:border-blue-500 focus:bg-black focus:shadow-[0_0_0_3px_rgba(205,28,24,0.25)]"
-      : "border-steel-300 bg-white text-steel-900 placeholder:text-steel-400 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(205,28,24,0.15)]",
+      ? "border-white/15 bg-black/80 text-white placeholder:text-white/85 focus:border-blue-500 focus:bg-black focus:shadow-[0_0_0_3px_rgba(104, 144, 72,0.25)]"
+      : "border-steel-300 bg-white text-steel-900 placeholder:text-steel-400 focus:border-blue-600 focus:shadow-[0_0_0_3px_rgba(104, 144, 72,0.15)]",
   );
 
   if (status === "success") {
@@ -125,7 +125,7 @@ export function LeadForm({
         <p
           className={cn(
             "mx-auto mt-2 max-w-sm text-sm leading-relaxed",
-            dark ? "text-white/60" : "text-steel-600",
+            dark ? "text-white/85" : "text-steel-600",
           )}
         >
           Em breve nossa equipe entra em contato. Enquanto isso, você também
@@ -222,7 +222,7 @@ export function LeadForm({
           <span
             className={cn(
               "pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs",
-              dark ? "text-white/40" : "text-steel-400",
+              dark ? "text-white/70" : "text-steel-400",
             )}
             aria-hidden
           >
@@ -272,8 +272,8 @@ export function LeadForm({
         ) : (
           <StarButton
             type="submit"
-            lightColor="#CD1C18"
-            backgroundColor="#0a0a0a"
+            lightColor="#FAFAFA"
+            backgroundColor="#689048"
             lightWidth={120}
             duration={2.6}
             borderWidth={1}

@@ -18,7 +18,7 @@ export default function SegmentosPage() {
 
       <div className="bg-black text-white">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/50">
+          <h2 className="text-center text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
             Desafios por setor
           </h2>
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -40,7 +40,7 @@ export default function SegmentosPage() {
             <h2 className="relative font-[family-name:var(--font-display)] text-3xl font-medium">
               Não encontrou seu segmento?
             </h2>
-            <p className="relative mt-3 max-w-xl text-sm text-white/55">
+            <p className="relative mt-3 max-w-xl text-sm text-white/85">
               Descreva a aplicação — avaliamos material e alternativas
               equivalentes.
             </p>

@@ -3,21 +3,26 @@
 import {
   ChevronLeft,
   ChevronRight,
+  Droplet,
   Eye,
+  Factory,
   Flag,
   Handshake,
-  Plus,
   Rocket,
   Settings,
   Star,
+  Tractor,
+  UtensilsCrossed,
 } from "lucide-react";
 import { AnimatePresence, motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { aboutContent } from "@/content/about";
 import { Reveal } from "@/components/Reveal";
 import { StatGlassCard } from "@/components/ui/glass-card";
 import { StarCircle } from "@/components/ui/star-button";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const slides = [
   {
@@ -136,7 +141,7 @@ export function EliteAboutCarousel() {
                 </p>
                 <Link
                   href="/sobre"
-                  className="mt-10 inline-flex w-full max-w-xs cursor-pointer bg-black py-4 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white transition-all duration-200 hover:bg-blue-600 hover:tracking-[0.36em] sm:w-auto sm:px-14"
+                  className="btn-glow mt-10 inline-flex w-full max-w-xs cursor-pointer bg-blue-600 py-4 text-center text-[10px] font-semibold uppercase tracking-[0.28em] text-white transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.36em] sm:w-auto sm:px-14"
                 >
                   Saiba mais
                 </Link>
@@ -202,9 +207,9 @@ export function MissionVisionValues() {
 
   return (
     <section className="relative overflow-hidden bg-black text-white">
-      {/* Aba / marca central */}
-      <div className="relative z-10 flex min-h-[42vh] flex-col items-center justify-center px-4 pb-10 pt-24 text-center sm:min-h-[48vh] sm:pt-28">
-        {/* Linhas verticais vermelhas atrás do nome */}
+      {/* Aba / marca */}
+      <div className="relative z-10 flex min-h-[42vh] flex-col items-center justify-center px-4 pb-10 pt-24 sm:min-h-[48vh] sm:pt-28">
+        {/* Linhas verticais verdes atrás do nome */}
         <div
           className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-[min(96vw,900px)] -translate-x-1/2 -translate-y-[52%] opacity-90 sm:h-80"
           aria-hidden
@@ -223,50 +228,69 @@ export function MissionVisionValues() {
                   opacity: 0.35 + strength * 0.65,
                   boxShadow:
                     strength > 0.55
-                      ? `0 0 ${10 + strength * 18}px rgba(205,28,24,${0.35 + strength * 0.4})`
+                      ? `0 0 ${10 + strength * 18}px rgba(104, 144, 72,${0.35 + strength * 0.4})`
                       : undefined,
                 }}
               />
             );
           })}
           <motion.span
-            className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-500 to-transparent shadow-[0_0_28px_rgba(205,28,24,0.85)]"
+            className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-gradient-to-b from-transparent via-blue-500 to-transparent shadow-[0_0_28px_rgba(104, 144, 72,0.85)]"
             animate={{ opacity: [0.55, 1, 0.55], scaleY: [0.75, 1, 0.75] }}
             transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           />
         </div>
 
-        <motion.p
-          className="relative text-[10px] font-medium uppercase tracking-[0.45em] text-white/45 sm:text-xs"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35 }}
-        >
-          Institucional
-        </motion.p>
-        <motion.h2
-          className="relative mt-5 font-[family-name:var(--font-display)] text-5xl font-medium uppercase tracking-[0.18em] text-white sm:text-6xl md:text-7xl"
-          style={{
-            textShadow:
-              "0 0 18px rgba(205,28,24,0.55), 0 0 40px rgba(205,28,24,0.35)",
-          }}
-          initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, ease }}
-        >
-          PhoenixBor
-        </motion.h2>
-        <motion.p
-          className="relative mt-5 text-[10px] font-medium uppercase tracking-[0.38em] text-white/50 sm:text-xs"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.35, delay: 0.1 }}
-        >
-          Qualidade · Precisão · Confiabilidade
-        </motion.p>
+        <div className="relative flex flex-col items-center gap-8 sm:flex-row sm:items-center sm:gap-10">
+          <div className="text-center">
+            <motion.p
+              className="text-[10px] font-medium uppercase tracking-[0.45em] text-white/75 sm:text-xs"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35 }}
+            >
+              Institucional
+            </motion.p>
+            <motion.h2
+              className="mt-5 font-[family-name:var(--font-display)] text-5xl font-medium uppercase tracking-[0.18em] text-white sm:text-6xl md:text-7xl"
+              style={{
+                textShadow:
+                  "0 0 18px rgba(104, 144, 72,0.55), 0 0 40px rgba(104, 144, 72,0.35)",
+              }}
+              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, ease }}
+            >
+              PhoenixBor
+            </motion.h2>
+            <motion.p
+              className="mt-5 text-[10px] font-medium uppercase tracking-[0.38em] text-white/80 sm:text-xs"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: 0.1 }}
+            >
+              Qualidade · Precisão · Confiabilidade
+            </motion.p>
+          </div>
+
+          <motion.div
+            className="shrink-0"
+            initial={{ opacity: 0, x: 20, scale: 0.92 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease }}
+          >
+            <BrandLogo
+              href={null}
+              iconOnly
+              iconSize={120}
+              className="drop-shadow-[0_0_28px_rgba(104,144,72,0.5)]"
+            />
+          </motion.div>
+        </div>
       </div>
 
       {/* Missão / Visão / Valores */}
@@ -286,7 +310,7 @@ export function MissionVisionValues() {
                 size={88}
                 lightWidth={88}
                 duration={2.8}
-                lightColor="#CD1C18"
+                lightColor="#689048"
                 backgroundColor="#0a0a0a"
                 borderWidth={2}
                 delay={i * 0.45}
@@ -377,7 +401,7 @@ export function StatsSection() {
             <h2 className="mt-4 font-[family-name:var(--font-display)] text-3xl font-medium tracking-tight sm:text-4xl lg:text-[2.6rem] lg:leading-tight">
               Referência em vedação industrial e parceria técnica desde 2002
             </h2>
-            <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/55 sm:text-[15px]">
+            <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/85 sm:text-[15px]">
               Unimos{" "}
               <strong className="font-semibold text-white">
                 fabricação própria
@@ -388,7 +412,7 @@ export function StatsSection() {
             </p>
             <Link
               href="/sobre"
-              className="btn-glow mt-8 inline-flex cursor-pointer bg-blue-600 px-8 py-3.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_10px_28px_rgba(205,28,24,0.35)] transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.28em]"
+              className="btn-glow mt-8 inline-flex cursor-pointer bg-blue-600 px-8 py-3.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-[0_10px_28px_rgba(104, 144, 72,0.35)] transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.28em]"
             >
               Ver sobre nós
             </Link>
@@ -426,218 +450,98 @@ export function StatsSection() {
   );
 }
 
-const floatProducts = [
+const specialSectors = [
   {
-    name: "Retentores",
-    image: "/images/products/retentores.png",
-    x: "6%",
-    y: "8%",
-    size: "48%",
-    rotate: -7,
-    z: 2,
+    name: "Agropecuário",
+    href: "/segmentos",
+    image:
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80",
+    Icon: Tractor,
   },
   {
-    name: "O-Rings",
-    image: "/images/products/o-rings.png",
-    x: "46%",
-    y: "22%",
-    size: "42%",
-    rotate: 8,
-    z: 3,
+    name: "Petrolífero",
+    href: "/segmentos",
+    image:
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80",
+    Icon: Droplet,
   },
   {
-    name: "Gaxetas",
-    image: "/images/products/gaxetas.png",
-    x: "18%",
-    y: "48%",
-    size: "46%",
-    rotate: -4,
-    z: 1,
+    name: "Alimentício",
+    href: "/segmentos",
+    image:
+      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80",
+    Icon: UtensilsCrossed,
+  },
+  {
+    name: "Industrial",
+    href: "/segmentos",
+    image:
+      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80",
+    Icon: Factory,
   },
 ] as const;
 
-const marketExtras = [
-  "/images/products/juntas.png",
-  "/images/products/gaxetas.png",
-  "/images/products/o-rings.png",
-  "/images/products/retentores.png",
-  "/images/products/juntas.png",
-  "/images/products/gaxetas.png",
-];
-
 export function MarketsSection() {
-  const [active, setActive] = useState(0);
-  const list = [
-    {
-      name: "Óleo e Gás",
-      summary:
-        "Vedações para alta pressão, temperatura e exposição a hidrocarbonetos.",
-    },
-    {
-      name: "Química e Petroquímica",
-      summary:
-        "Soluções para fluidos agressivos, ácidos, bases e solventes industriais.",
-    },
-    {
-      name: "Alimentos e Bebidas",
-      summary: "Materiais para processos sanitários e contato com alimentos.",
-    },
-    {
-      name: "Siderurgia e Mineração",
-      summary: "Vedações robustas para abrasão, poeira e cargas pesadas.",
-    },
-    {
-      name: "Papel e Celulose",
-      summary: "Componentes para bombas, digesters e linhas de processo úmido.",
-    },
-    {
-      name: "Automotivo e OEM",
-      summary: "Peças sob especificação para montadoras e fabricantes.",
-    },
-  ];
-  const current = list[active];
-
-  const products = floatProducts.map((p, i) => ({
-    ...p,
-    image:
-      i === 1
-        ? marketExtras[active]
-        : p.image,
-    rotate: p.rotate + (active % 2 === 0 ? 0 : active % 3 === 0 ? 2 : -2),
-  }));
-
   return (
-    <section className="relative overflow-hidden bg-black text-white">
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.1fr)] lg:items-center lg:gap-4">
-        <div className="relative z-10">
-          <Reveal>
-            <p className="text-xs uppercase tracking-[0.28em] text-white/40">
-              Mercados de atuação
-            </p>
-          </Reveal>
-          <div className="mt-6 flex flex-wrap items-end gap-4">
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={current.name}
-                className="font-[family-name:var(--font-display)] text-4xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl"
-                initial={{ opacity: 0, y: 20, filter: "blur(10px)", scale: 0.96 }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
-                exit={{ opacity: 0, y: -12, filter: "blur(6px)" }}
-                transition={{ duration: 0.22, ease }}
-              >
-                {current.name}
-              </motion.h2>
-            </AnimatePresence>
-            <button
-              type="button"
-              aria-label="Próximo mercado"
-              onClick={() => setActive((i) => (i + 1) % list.length)}
-              className="mb-2 inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-150 hover:scale-110 hover:rotate-90 hover:border-blue-500 hover:bg-blue-600"
-            >
-              <Plus className="h-4 w-4" />
-            </button>
-          </div>
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={current.summary}
-              className="mt-4 max-w-md text-sm leading-relaxed text-white/50"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.18 }}
-            >
-              {current.summary}
-            </motion.p>
-          </AnimatePresence>
+    <section className="bg-steel-50 text-steel-950">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+        <Reveal>
+          <h2 className="text-center font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight sm:text-3xl md:text-4xl">
+            Soluções{" "}
+            <span className="text-blue-600">especiais</span> para os setores:
+          </h2>
+        </Reveal>
 
-          <ul className="mt-10 space-y-3">
-            {list.map((item, i) => (
-              <li key={item.name}>
-                <button
-                  type="button"
-                  onClick={() => setActive(i)}
-                  className={`cursor-pointer text-left text-sm uppercase tracking-[0.18em] transition-all duration-150 ${
-                    i === active
-                      ? "translate-x-2 text-white"
-                      : "text-white/30 hover:translate-x-1 hover:text-white/70"
-                  }`}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-5">
+          {specialSectors.map((sector, i) => {
+            const Icon = sector.Icon;
+            return (
+              <Reveal key={sector.name} delay={i * 0.06}>
+                <Link
+                  href={sector.href}
+                  className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(104,144,72,0.18)]"
                 >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <Image
+                      src={sector.image}
+                      alt={sector.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                  </div>
 
-          <div className="mt-12 flex flex-wrap gap-3">
-            <Link
-              href="/produtos"
-              className="inline-flex cursor-pointer border border-white/40 px-7 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-all duration-200 hover:border-blue-500 hover:bg-blue-600 hover:tracking-[0.28em]"
-            >
-              Todos os produtos
-            </Link>
-            <Link
-              href="/contato"
-              className="btn-glow inline-flex cursor-pointer bg-blue-600 px-7 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-all duration-200 hover:bg-blue-500 hover:tracking-[0.28em]"
-            >
-              Solicitar orçamento
-            </Link>
-          </div>
+                  <div className="relative flex flex-col items-center px-4 pb-6 pt-10">
+                    <span className="absolute -top-8 flex h-16 w-16 items-center justify-center rounded-full border-[3px] border-blue-400 bg-blue-800 shadow-[0_0_20px_rgba(104,144,72,0.45)] transition-transform duration-300 group-hover:scale-110">
+                      <Icon
+                        className="h-7 w-7 text-blue-300"
+                        strokeWidth={1.75}
+                      />
+                    </span>
+                    <p className="mt-1 text-center text-sm font-bold uppercase tracking-[0.14em] text-steel-950">
+                      {sector.name}
+                    </p>
+                  </div>
+                </Link>
+              </Reveal>
+            );
+          })}
         </div>
 
-        {/* Produtos flutuando no meio */}
-        <div className="relative mx-auto flex aspect-square w-full max-w-xl items-center justify-center lg:max-w-none">
-          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[55%] w-[55%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/15 blur-3xl" />
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current.name}
-              className="absolute inset-0"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 0.28, ease }}
-            >
-              {products.map((p, i) => (
-                <motion.div
-                  key={`${current.name}-${p.name}-${i}`}
-                  className="absolute overflow-hidden bg-white shadow-[0_24px_70px_rgba(0,0,0,0.55)]"
-                  style={{
-                    left: p.x,
-                    top: p.y,
-                    width: p.size,
-                    aspectRatio: "1 / 1",
-                    zIndex: p.z,
-                  }}
-                  initial={{ opacity: 0, y: 32, rotate: p.rotate - 10, scale: 0.92 }}
-                  animate={{
-                    opacity: 1,
-                    y: [0, -12, 0],
-                    rotate: p.rotate,
-                    scale: 1,
-                  }}
-                  transition={{
-                    opacity: { duration: 0.3, delay: i * 0.05 },
-                    scale: { duration: 0.3, delay: i * 0.05, ease },
-                    rotate: { duration: 0.32, delay: i * 0.05, ease },
-                    y: {
-                      duration: 3 + i * 0.35,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: i * 0.15,
-                    },
-                  }}
-                >
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="h-full w-full object-contain p-2"
-                  />
-                  <span className="absolute bottom-2 left-2 bg-black/70 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-white">
-                    {p.name}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/produtos"
+            className="inline-flex cursor-pointer border border-steel-300 bg-white px-7 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-steel-950 transition-all duration-200 hover:border-blue-600 hover:text-blue-700"
+          >
+            Todos os produtos
+          </Link>
+          <Link
+            href="/contato"
+            className="btn-glow inline-flex cursor-pointer bg-blue-600 px-7 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition-all duration-200 hover:bg-blue-500"
+          >
+            Solicitar orçamento
+          </Link>
         </div>
       </div>
     </section>

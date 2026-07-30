@@ -64,9 +64,9 @@ export function WaveTimeline() {
                 x2="100%"
                 y2="0%"
               >
-                <stop offset="0%" stopColor="#CD1C18" stopOpacity="0.2" />
-                <stop offset="40%" stopColor="#CD1C18" stopOpacity="0.95" />
-                <stop offset="100%" stopColor="#CD1C18" stopOpacity="0.2" />
+                <stop offset="0%" stopColor="#689048" stopOpacity="0.2" />
+                <stop offset="40%" stopColor="#689048" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#689048" stopOpacity="0.2" />
               </linearGradient>
             </defs>
 
@@ -80,7 +80,7 @@ export function WaveTimeline() {
 
             <path
               d={WAVE_D}
-              stroke="#FF4A45"
+              stroke="#88a050"
               strokeWidth="3.5"
               strokeLinecap="round"
               fill="none"
@@ -100,7 +100,7 @@ export function WaveTimeline() {
                   cx={cx}
                   cy={cy}
                   r="16"
-                  fill="#CD1C18"
+                  fill="#689048"
                   opacity="0.22"
                   className="wave-node-pulse"
                   style={{ animationDelay: `${i * 0.4}s` }}
@@ -109,7 +109,7 @@ export function WaveTimeline() {
                   cx={cx}
                   cy={cy}
                   r="7"
-                  fill="#CD1C18"
+                  fill="#689048"
                   stroke="#ffffff"
                   strokeWidth="3"
                   filter="url(#wave-glow)"
@@ -145,7 +145,7 @@ export function WaveTimeline() {
       <ol className="relative space-y-10 border-l-2 border-blue-600 pl-8 md:hidden">
         {items.map((item) => (
           <li key={item.title} className="relative">
-            <span className="absolute -left-[2.45rem] top-2 h-3.5 w-3.5 rounded-full bg-blue-600 shadow-[0_0_12px_rgba(205,28,24,0.85)] ring-4 ring-white" />
+            <span className="absolute -left-[2.45rem] top-2 h-3.5 w-3.5 rounded-full bg-blue-600 shadow-[0_0_12px_rgba(104, 144, 72,0.85)] ring-4 ring-white" />
             <p className="text-2xl font-bold text-steel-300">{item.year}</p>
             <h3 className="mt-1 text-lg font-bold text-steel-950">
               {item.title}

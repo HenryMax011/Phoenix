@@ -130,7 +130,7 @@ export function ContactChat({
   )}`;
 
   const fieldClass =
-    "w-full rounded-md border border-white/20 bg-[#141414] px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-white/35 focus:border-blue-500";
+    "w-full rounded-md border border-white/20 bg-[#141414] px-3 py-2.5 text-sm text-white outline-none transition-colors placeholder:text-white/85 focus:border-blue-500";
 
   return (
     <div
@@ -152,7 +152,7 @@ export function ContactChat({
           <p className="truncate text-sm font-semibold">
             PhoenixBor · Atendimento
           </p>
-          <p className="flex items-center gap-1.5 text-xs text-white/60">
+          <p className="flex items-center gap-1.5 text-xs text-white/85">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             online agora
           </p>
@@ -196,7 +196,7 @@ export function ContactChat({
             </a>
             <button
               type="button"
-              className="mt-4 cursor-pointer text-xs text-white/50 underline-offset-2 hover:text-white hover:underline"
+              className="mt-4 cursor-pointer text-xs text-white/80 underline-offset-2 hover:text-white hover:underline"
               onClick={reset}
             >
               Enviar outro contato
@@ -212,7 +212,7 @@ export function ContactChat({
 
             <div className="mb-3 max-w-[88%] rounded-2xl rounded-tl-sm bg-[#1e1e1e] px-3.5 py-2.5 text-sm leading-relaxed text-white/95 shadow">
               Olá! Sou o assistente virtual da <strong>PhoenixBor</strong>.
-              <span className="mt-1 block text-right text-[10px] text-white/40">
+              <span className="mt-1 block text-right text-[10px] text-white/70">
                 {time}
               </span>
             </div>
@@ -229,7 +229,7 @@ export function ContactChat({
               <div className="mb-3 max-w-[88%] rounded-2xl rounded-tl-sm bg-[#1e1e1e] px-3.5 py-2.5 text-sm leading-relaxed text-white/95 shadow">
                 Como podemos te ajudar hoje? Escolha uma opção ou digite sua
                 mensagem.
-                <span className="mt-1 block text-right text-[10px] text-white/40">
+                <span className="mt-1 block text-right text-[10px] text-white/70">
                   {time}
                 </span>
               </div>
@@ -253,7 +253,7 @@ export function ContactChat({
             {topic ? (
               <div className="mb-3 ml-auto max-w-[85%] rounded-2xl rounded-tr-sm bg-blue-800 px-3.5 py-2.5 text-sm leading-relaxed text-white shadow">
                 {topic}
-                <span className="mt-1 block text-right text-[10px] text-white/50">
+                <span className="mt-1 block text-right text-[10px] text-white/80">
                   {time}
                 </span>
               </div>
@@ -263,7 +263,7 @@ export function ContactChat({
               <>
                 <div className="mb-3 max-w-[88%] rounded-2xl rounded-tl-sm bg-[#1e1e1e] px-3.5 py-2.5 text-sm leading-relaxed text-white/95 shadow">
                   Perfeito. Para te atender, preciso só do seu nome e número.
-                  <span className="mt-1 block text-right text-[10px] text-white/40">
+                  <span className="mt-1 block text-right text-[10px] text-white/70">
                     {time}
                   </span>
                 </div>
@@ -352,7 +352,7 @@ export function ContactChat({
               }
             }}
             placeholder="Digite sua mensagem..."
-            className="flex-1 rounded-full border-0 bg-[#1e1e1e] px-4 py-2.5 text-sm text-white outline-none placeholder:text-white/35"
+            className="flex-1 rounded-full border-0 bg-[#1e1e1e] px-4 py-2.5 text-sm text-white outline-none placeholder:text-white/85"
           />
           <button
             type="button"

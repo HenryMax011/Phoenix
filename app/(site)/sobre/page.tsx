@@ -46,8 +46,8 @@ export default function SobrePage() {
             <Link href="/" className="hover:text-white">
               Home
             </Link>
-            <span className="mx-2 text-white/40">›</span>
-            <span className="font-semibold text-blue-300">Sobre nós</span>
+            <span className="mx-2 text-white/70">›</span>
+            <span className="font-semibold text-blue-400">Sobre nós</span>
           </p>
           <h1 className="mt-5 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
             {aboutContent.heroTitle}
@@ -125,7 +125,7 @@ export default function SobrePage() {
             <Award className="h-12 w-12 text-blue-400" strokeWidth={1.5} />
           </div>
           <div>
-            <span className="inline-flex rounded-full border border-blue-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-300">
+            <span className="inline-flex rounded-full border border-blue-500 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-blue-400">
               Qualidade PhoenixBor
             </span>
             <h2 className="mt-4 text-2xl font-bold sm:text-3xl">
@@ -195,7 +195,7 @@ export default function SobrePage() {
             </p>
             <Link
               href="/contato"
-              className="mt-8 inline-flex cursor-pointer bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(205,28,24,0.35)] transition-colors hover:bg-blue-600"
+              className="mt-8 inline-flex cursor-pointer bg-blue-700 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(104, 144, 72,0.35)] transition-colors hover:bg-blue-600"
             >
               Ver contato
             </Link>
