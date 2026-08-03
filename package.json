@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "prebuild": "bash scripts/fix-permissions.sh || true",
+    "build": "bash scripts/fix-permissions.sh && next build",
     "start": "next start",
     "lint": "eslint",
     "fix:perms": "bash scripts/fix-permissions.sh",

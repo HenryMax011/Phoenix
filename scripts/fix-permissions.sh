@@ -1,17 +1,17 @@
 #!/bin/bash
-# Corrige permissões após upload/unzip na Hostinger (Linux)
-set -euo pipefail
+# Corrige permissões antes do build (Hostinger / Linux)
+# Evita EACCES ao escanear app/api/leads
 
-echo "Ajustando permissões do projeto..."
+set +e
 
-find . -type d -exec chmod 755 {} \;
-find . -type f -exec chmod 644 {} \;
+chmod -R 755 app 2>/dev/null
+chmod -R 755 app/api 2>/dev/null
+chmod -R 755 app/api/leads 2>/dev/null
+chmod 644 app/api/leads/route.ts 2>/dev/null
 
-# scripts executáveis
-chmod 755 scripts/*.sh 2>/dev/null || true
+# Demais pastas/arquivos do projeto
+find . -type d ! -path './node_modules*' ! -path './.next*' ! -path './.git*' -exec chmod 755 {} \; 2>/dev/null
+find . -type f ! -path './node_modules*' ! -path './.next*' ! -path './.git*' -exec chmod 644 {} \; 2>/dev/null
+chmod 755 scripts/*.sh 2>/dev/null
 
-# garante leitura em app/api
-chmod -R u+rwX,go+rX app public 2>/dev/null || true
-
-echo "OK — pastas 755, arquivos 644"
-echo "Agora rode: npm ci && npm run build && npm run start"
+exit 0

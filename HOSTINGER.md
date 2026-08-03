@@ -50,30 +50,30 @@ NEXT_PUBLIC_SITE_URL=https://phoenixbor.com.br
 
 Sem o site no ar no domínio correto, o Google **não encontra a tag**.
 
-## Como subir na Hostinger (Node.js)
+## Configuração no painel Hostinger
 
-1. Crie um site Node.js no painel Hostinger
-2. Faça upload deste ZIP e extraia na pasta do app
-3. **Rode o script de permissões** (passo acima)
-4. No painel, configure:
+Use exatamente:
+
+| Campo | Valor |
+|--------|--------|
+| Comando de construção | `npm run build` |
+| Gerenciador | `npm` |
+| Diretório de saída | `.next` |
+| Node | `20.x` ou `22.x` |
+
+O `npm run build` já roda `scripts/fix-permissions.sh` **antes** do `next build`
+(corrige EACCES em `app/api/leads`).
+
+### Variáveis de ambiente (Adicionar)
 
 ```
-Node version: 20+
-Start command: npm run start
-Build command: npm run build
+NEXT_PUBLIC_SITE_URL=https://phoenixbor.com.br
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
+NEXT_PUBLIC_WHATSAPP=5511967912870
 ```
 
-Ou via SSH:
+Depois clique em **Salvar e reimplantar**.
 
-```bash
-bash scripts/fix-permissions.sh
-npm ci
-npm run build
-npm run start
-```
-
-5. Defina as variáveis de ambiente listadas em `.env.example`
-6. Aponte o domínio para a aplicação Node
 
 ## Arquivos importantes
 
