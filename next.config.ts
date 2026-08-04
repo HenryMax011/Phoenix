@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  // Sem standalone — Hostinger Next.js usa `next start` + pasta `.next`
   images: {
     remotePatterns: [
       {
