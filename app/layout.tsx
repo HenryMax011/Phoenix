@@ -4,7 +4,6 @@ import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { googleAnalytics } from "@/lib/analytics";
 import { JsonLd } from "@/components/JsonLd";
-import { GoogleTagsHead, GoogleTagsBody } from "@/components/GoogleTags";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -17,6 +16,9 @@ const body = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
+const GTM_ID = "GTM-WCZR6FK7";
+const ADS_ID = "AW-18368960208";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -79,6 +81,9 @@ export const metadata: Metadata = {
     icon: "/images/brand/phoenix-icon.png",
     apple: "/images/brand/phoenix-icon.png",
   },
+  other: {
+    "google-site-verification": googleAnalytics.siteVerification,
+  },
 };
 
 export default function RootLayout({
@@ -92,10 +97,44 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <head>
-        <GoogleTagsHead />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
+
+        {/* Google tag (gtag.js) — Google Ads */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${ADS_ID}');`,
+          }}
+        />
       </head>
       <body className="min-h-full font-sans text-steel-950">
-        <GoogleTagsBody />
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
         <JsonLd />
         {children}
       </body>
