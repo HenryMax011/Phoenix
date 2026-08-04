@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "bash scripts/fix-permissions.sh || true",
-    "build": "bash scripts/fix-permissions.sh && next build",
+    "prebuild": "node scripts/fix-permissions.js",
+    "build": "node scripts/fix-permissions.js && next build",
     "start": "next start",
     "lint": "eslint",
-    "fix:perms": "bash scripts/fix-permissions.sh",
+    "fix:perms": "node scripts/fix-permissions.js",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio"
   },

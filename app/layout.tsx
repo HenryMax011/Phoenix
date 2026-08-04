@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
+import { googleAnalytics } from "@/lib/analytics";
 import { JsonLd } from "@/components/JsonLd";
+import { GoogleTagsHead, GoogleTagsBody } from "@/components/GoogleTags";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -15,8 +17,6 @@ const body = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: googleVerification
-    ? { google: googleVerification }
-    : undefined,
+  verification: {
+    google: googleAnalytics.siteVerification,
+  },
   openGraph: {
     title: `${siteConfig.name} | Vedação Industrial`,
     description: siteConfig.description,
@@ -91,7 +91,11 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
+      <head>
+        <GoogleTagsHead />
+      </head>
       <body className="min-h-full font-sans text-steel-950">
+        <GoogleTagsBody />
         <JsonLd />
         {children}
       </body>

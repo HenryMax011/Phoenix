@@ -69,6 +69,8 @@ O `npm run build` já roda `scripts/fix-permissions.sh` **antes** do `next build
 ```
 NEXT_PUBLIC_SITE_URL=https://phoenixbor.com.br
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=
+NEXT_PUBLIC_GTM_ID=GTM-WCZR6FK7
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-18368960208
 NEXT_PUBLIC_WHATSAPP=5511967912870
 ```
 
